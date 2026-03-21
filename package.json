@@ -1,0 +1,28 @@
+{
+  "name": "galactic_conspiracies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luucamay/galactic_conspiracies.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/luucamay/galactic_conspiracies/issues"
+  },
+  "homepage": "https://github.com/luucamay/galactic_conspiracies#readme",
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "@tetherto/wdk": "^1.0.0-beta.6",
+    "@tetherto/wdk-wallet-evm": "^1.0.0-beta.10",
+    "@tetherto/wdk-wallet-solana": "^1.0.0-beta.5"
+  }
+}
