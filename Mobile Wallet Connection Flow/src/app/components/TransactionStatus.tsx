@@ -2,20 +2,23 @@ import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router";
 import { Button } from "./ui/button";
 import { Loader2, CheckCircle2, ArrowRight } from "lucide-react";
+import { addToBalance, getCurrentBalance } from "../balance";
 
 export function TransactionStatus() {
   const navigate = useNavigate();
   const location = useLocation();
   const [status, setStatus] = useState<"submitting" | "success">("submitting");
+  const [currentBalance, setCurrentBalance] = useState(getCurrentBalance());
   
   const amount = location.state?.amount || 0;
   const sourceWallet = location.state?.sourceWallet || "";
   const gcWallet = location.state?.gcWallet || "";
-  const currentBalance = 0;
 
   useEffect(() => {
     // Simulate transaction processing
     const timer = setTimeout(() => {
+      const updatedBalance = addToBalance(amount);
+      setCurrentBalance(updatedBalance);
       setStatus("success");
     }, 3000);
 
@@ -23,7 +26,11 @@ export function TransactionStatus() {
   }, []);
 
   const handleClose = () => {
-    navigate("/");
+    navigate("/", {
+      state: {
+        buyAmount: amount,
+      },
+    });
   };
 
   const handleNewDeposit = () => {

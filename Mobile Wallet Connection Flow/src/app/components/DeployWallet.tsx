@@ -33,6 +33,7 @@ export function DeployWallet() {
   const navigate = useNavigate();
   const location = useLocation();
   const sourceWallet = location.state?.sourceWallet || "";
+  const buyAmount = location.state?.buyAmount;
   const [isDeploying, setIsDeploying] = useState(false);
   const [deployError, setDeployError] = useState("");
 
@@ -61,7 +62,13 @@ export function DeployWallet() {
 
     try {
       const gcWallet = await createGcWalletAddress();
-      navigate("/deposit", { state: { sourceWallet, gcWallet } });
+      navigate("/deposit", {
+        state: {
+          sourceWallet,
+          gcWallet,
+          buyAmount,
+        },
+      });
     } catch (error) {
       setDeployError(error instanceof Error ? error.message : String(error));
       setIsDeploying(false);

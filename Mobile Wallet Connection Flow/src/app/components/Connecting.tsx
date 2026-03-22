@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { Loader2 } from "lucide-react";
 import { Button } from "./ui/button";
 
@@ -15,8 +15,10 @@ declare global {
 
 export function Connecting() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [error, setError] = useState<string>("");
   const [isConnecting, setIsConnecting] = useState(true);
+  const buyAmount = location.state?.buyAmount;
 
   const connectWallet = useCallback(async () => {
     if (!window.ethereum) {
@@ -40,7 +42,12 @@ export function Connecting() {
 
     try {
       const sourceWallet = await connectWallet();
-      navigate("/deploy-wallet", { state: { sourceWallet } });
+      navigate("/deploy-wallet", {
+        state: {
+          sourceWallet,
+          buyAmount,
+        },
+      });
     } catch (connectError) {
       setError(connectError instanceof Error ? connectError.message : String(connectError));
       setIsConnecting(false);

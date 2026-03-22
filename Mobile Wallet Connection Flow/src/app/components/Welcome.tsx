@@ -1,33 +1,86 @@
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { Button } from "./ui/button";
-import { Wallet } from "lucide-react";
+import { Input } from "./ui/input";
+import { useEffect, useState } from "react";
+import { getCurrentBalance, subtractFromBalance } from "../balance";
 
 export function Welcome() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [amount, setAmount] = useState("0");
+  const [currentBalance, setCurrentBalance] = useState(0);
+  const [feedback, setFeedback] = useState("");
 
-  const handleConnect = () => {
-    navigate("/connecting");
+  useEffect(() => {
+    const stateAmount = location.state?.buyAmount;
+
+    if (typeof stateAmount === "number" && Number.isFinite(stateAmount)) {
+      setAmount(String(stateAmount));
+    }
+
+    setCurrentBalance(getCurrentBalance());
+  }, [location.state]);
+
+  const handleBuy = () => {
+    setFeedback("");
+
+    if (displayAmount <= 0) {
+      setFeedback("Enter a valid mins amount greater than zero.");
+      return;
+    }
+
+    const buyResult = subtractFromBalance(displayAmount);
+
+    if (buyResult.ok) {
+      setCurrentBalance(buyResult.balance);
+      setFeedback(`Purchase complete: ${displayAmount} mins bought.`);
+      return;
+    }
+
+    navigate("/connecting", {
+      state: {
+        buyAmount: displayAmount,
+      },
+    });
   };
+
+  const parsedAmount = Number(amount);
+  const displayAmount = Number.isNaN(parsedAmount) ? 0 : parsedAmount;
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6 bg-gradient-to-b from-blue-50 to-white">
-      <div className="max-w-md w-full text-center space-y-8">
-        <div className="space-y-4">
-          <div className="w-20 h-20 mx-auto bg-blue-600 rounded-full flex items-center justify-center">
-            <Wallet className="w-10 h-10 text-white" />
-          </div>
-          <h1 className="text-4xl font-bold text-gray-900">Welcome to GC</h1>
-          <p className="text-gray-600">
-            Connect your crypto wallet to get started with GC's secure proxy wallet service
+      <div className="max-w-md w-full bg-white rounded-2xl shadow-xl border border-gray-100 p-6 space-y-6">
+        <div className="space-y-2 text-center">
+          <h1 className="text-3xl font-bold text-gray-900">buy mins for live show</h1>
+          <p className="text-sm text-gray-600">
+            Current Balance: <span className="font-semibold text-gray-900">{currentBalance.toFixed(2)} USDT</span>
           </p>
         </div>
 
-        <Button
-          onClick={handleConnect}
-          className="w-full h-14 text-lg bg-blue-600 hover:bg-blue-700"
-        >
-          Connect Crypto Wallet
+        <div className="space-y-2">
+          <label htmlFor="show-mins-input" className="text-sm text-gray-600 block">
+            Amount
+          </label>
+          <Input
+            id="show-mins-input"
+            type="number"
+            min="0"
+            step="1"
+            value={amount}
+            onChange={(event) => setAmount(event.target.value)}
+            className="h-12 text-lg"
+          />
+        </div>
+
+        <p className="text-center text-gray-600">
+          extend show by <span className="font-semibold text-gray-900">{displayAmount}</span> mins
+        </p>
+
+        <Button onClick={handleBuy} className="w-full h-12 text-base bg-blue-600 hover:bg-blue-700">
+          Buy
         </Button>
+
+        {feedback && <p className="text-sm text-center text-gray-600">{feedback}</p>}
       </div>
     </div>
   );

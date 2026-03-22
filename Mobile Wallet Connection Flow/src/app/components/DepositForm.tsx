@@ -1,16 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { ArrowDownUp } from "lucide-react";
+import { getCurrentBalance } from "../balance";
 
 export function DepositForm() {
   const navigate = useNavigate();
   const location = useLocation();
   const [amount, setAmount] = useState("");
-  const currentBalance = 0;
+  const [currentBalance, setCurrentBalance] = useState(0);
   const sourceWallet = location.state?.sourceWallet || "";
   const gcWallet = location.state?.gcWallet || "";
+  const buyAmount = location.state?.buyAmount;
+
+  useEffect(() => {
+    setCurrentBalance(getCurrentBalance());
+
+    if (typeof buyAmount === "number" && Number.isFinite(buyAmount) && buyAmount > 0) {
+      setAmount(String(buyAmount));
+    }
+  }, [buyAmount]);
 
   const handleContinue = () => {
     if (amount && parseFloat(amount) > 0) {

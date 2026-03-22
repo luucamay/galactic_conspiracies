@@ -1,12 +1,13 @@
 import { useNavigate, useLocation } from "react-router";
 import { Button } from "./ui/button";
 import { ArrowRight, Clock } from "lucide-react";
+import { getCurrentBalance } from "../balance";
 
 export function ReviewDeposit() {
   const navigate = useNavigate();
   const location = useLocation();
   const amount = location.state?.amount || 0;
-  const currentBalance = 0;
+  const currentBalance = getCurrentBalance();
   const sourceWallet = location.state?.sourceWallet || "";
   const gcWallet = location.state?.gcWallet || "";
   const estimatedTime = 2;
