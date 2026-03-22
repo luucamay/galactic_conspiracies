@@ -5,6 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
+    "start:web": "node src/web-server.js",
+    "build:mobile": "npm --prefix \"Mobile Wallet Connection Flow\" run build",
+    "start:web:mobile": "npm run build:mobile && npm run start:web",
+    "start:cli": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
