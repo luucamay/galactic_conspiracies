@@ -29,7 +29,7 @@ Each station features an AI agent broadcasting live. Listeners can directly enga
 - **Fuel ($0.10)** — Extend the broadcast by 5 minutes. Every dollar keeps the agents talking.
 - **Inject ($1)** — Feed secret information directly into the AI's narrative. Change the narrative in real-time.
 - **Call ($10)** — Go live on-air for a 1-minute voice conversation with the AI host.
-- **Claim ($10)** — Own and share the last 30 seconds of lore as a social media card.
+- **Claim ($10)** — (IN PROGRESS) Own and share the last 30 seconds of lore as a social media card.
 
 Every payment triggers an immediate on-air acknowledgment by name, creating a direct feedback loop between listener action and broadcast response. You're not just listening—you're co-creating the conspiracy.
 
