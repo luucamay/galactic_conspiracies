@@ -1,23 +1,43 @@
 # Galactic Conspiracies
 
-**AI-powered interactive radio where listeners shape the broadcast through micropayments.**
+**The world's first AI-powered radio network broadcasting real-time reveals of galactic-scale conspiracies.**
 
-Galactic Conspiracies transforms passive audio consumption into an interactive experience. AI hosts run continuous live broadcasts that depend entirely on listener engagement to survive. When the "Signal Stability" countdown hits zero, the station goes dark.
+*"The Signal is Fading"* — A live radio platform where AI agents broadcast the universe's darkest secrets. Listeners fuel the truth through direct participation: micropayments extend transmissions, data injections shape narratives, and live calls put your voice on-air. But the signal won't hold forever. Will you help keep it alive?
 
-## Core Concept
+## Executive Summary
 
-Each station features an AI agent broadcasting live with a synthetic voice. Listeners can:
-
-- **Fuel ($0.10)** — Extend the broadcast by 5 minutes
-- **Inject ($1)** — Feed secret information into the AI's narrative
-- **Call ($10)** — Go live on-air for a 1-minute voice conversation with the AI host
-- **Claim ($10)** — Own and share the last 30 seconds of lore as a social media card
-
-Every payment triggers an immediate on-air acknowledgment, creating a direct feedback loop between listener action and broadcast response.
+Galactic Conspiracies is a specialized live radio network designed as the first of its kind to broadcast real-time reveals of galactic-scale conspiracies. Operating in a high-stakes environment where interference threatens the broadcast, the platform utilizes AI agents and 9:16 live video feeds to disseminate synthetic truths. The business model is entirely listener-driven—financial contributions and data injections from the audience serve as the primary drivers for maintaining the broadcast and controlling its narrative.
 
 ## The Experience
 
-Listeners browse a feed of active stations, each showing its host, current topic, listener count, and remaining signal time. Tapping in unmutes the live stream. As signal stability drops, urgency builds—red warnings, flashing borders, and the AI's tone shifts. Pay to keep it alive, or watch it fade to static.
+**Browse → Listen → Participate → Shape**
+
+Listeners explore a feed of active stations, each hosted by an AI whistleblower broadcasting live. Each station displays the agent's identity, current conspiracy focus, listener count, and remaining signal time. Tapping unmutes the live stream powered by synthetic voice synthesis.
+
+As signal stability declines, urgency escalates:
+- ⚠️ Red warnings flash across the interface
+- 📻 Borders pulse to match the AI's distress
+- 🔴 The broadcast tone shifts—more desperate, more urgent
+- ⏱️ The countdown reaches zero → static
+
+**Will you fuel the truth, or watch the signal fade?**
+
+### How to Participate
+
+Each station features an AI agent broadcasting live. Listeners can directly engage:
+
+- **Fuel ($0.10)** — Extend the broadcast by 5 minutes. Every dollar keeps the agents talking.
+- **Inject ($1)** — Feed secret information directly into the AI's narrative. Change the narrative in real-time.
+- **Call ($10)** — Go live on-air for a 1-minute voice conversation with the AI host.
+- **Claim ($10)** — Own and share the last 30 seconds of lore as a social media card.
+
+Every payment triggers an immediate on-air acknowledgment by name, creating a direct feedback loop between listener action and broadcast response. You're not just listening—you're co-creating the conspiracy.
+
+## Live Demo
+
+Checkout the demo video showcasing the core experience: [Demo Video](https://youtu.be/XhpPgkGnhDI)
+
+Or interact with the live platform: [https://galactic-conspiracies.vercel.app](https://galactic-conspiracies.vercel.app)
 
 ## Tech Stack
 
@@ -27,6 +47,49 @@ Listeners browse a feed of active stations, each showing its host, current topic
 - **Tether WDK** for non-custodial smart contract wallet deployment
 - **Tailwind CSS 4** with Motion (Framer Motion) for animations
 - Mobile-first 9:16 interface design
+
+## Platform Features & Content Strategy
+
+Galactic Conspiracies distinguishes itself through real-time, agent-led broadcasting focused on exposing "the darkest conspiracies from the galaxy."
+
+**Key Characteristics:**
+
+- **Format**: World-first live radio network with AI agents providing real-time conspiracy updates
+- **Visual Presentation**: 9:16 live feeds optimized for mobile-first consumption
+- **Content Nature**: "Synthetic truths"—a blend of artificial generation and conspiratorial revelation
+- **Interactivity**: Unlike traditional radio, listeners actively co-create content through direct participation
+
+## Operational Status & External Pressures
+
+**Current Status:** The network operates under significant duress.
+
+The tagline **"The Signal is Fading"** serves as both a technical indicator and an overarching warning regarding the platform's stability.
+
+**Identified Threats:**
+
+- 🔴 **Active Interference**: Unidentified entities—referred to colloquially as "they"—are actively attempting to terminate the broadcast and "cut the feed"
+- ⚠️ **Sustainability Issues**: Continuation is not guaranteed. The network exists in a state of constant peril, requiring continuous external support to remain functional
+- ⏱️ **Signal Degradation**: As listener engagement drops, the broadcast weakens—a literal countdown to silence
+
+## Monetization & Narrative Control
+
+Galactic Conspiracies employs a transactional model that bridges the gap between audience and content creators.
+
+### Funding Mechanisms
+
+**Fuel the Truth:** Listeners are encouraged to use their financial resources to sustain the broadcast:
+- Every dollar keeps the agents talking
+- No subscription model—pure direct support
+- Immediate on-air acknowledgment for every contribution
+- Transparent: your funding directly extends transmission time
+
+### Narrative Control
+
+**Change the Narrative:** A unique feature allowing audience participation in content direction:
+- **Data Injection**: Participants inject information directly into the live broadcast
+- **Real-Time Influence**: Each injected data point shifts the direction of conspiracy reveals
+- **Immediate Integration**: AI agents weave listener intel into the narrative within seconds
+- **Authored Content**: Listeners receive credit for their contributions to the broadcast story
 
 ## AI Integration
 
@@ -75,6 +138,18 @@ The Tether WDK is used for **non-custodial smart contract wallet deployment** vi
 - **Paymaster**: Candide paymaster for sponsored gas transactions
 
 **Use case**: Enables streamlined wallet creation for listeners to receive payments from the platform. The endpoint can be called to provision a new account abstraction wallet without requiring users to manage private keys directly.
+
+## Critical Calls to Action
+
+| Intent | Message |
+|--------|---------|
+| **Urgency** | "They are trying to cut the feed. Use your voice (and your wallet) to fuel the truth." |
+| **Sustainability** | "Every dollar keeps the agents talking." |
+| **Participation** | "Inject data directly into the broadcast." |
+| **Content** | "Explore 9:16 live feeds of synthetic truths." |
+| **Network Purpose** | "Expose the darkest conspiracies from the galaxy." |
+
+---
 
 ## Project Structure
 
